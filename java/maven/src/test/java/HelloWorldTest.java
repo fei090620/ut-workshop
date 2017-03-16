@@ -5,10 +5,12 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
+
 public class HelloWorldTest {
     @Test
-    public void hello_world_test(){
-       assertThat("Hello World").isEqualTo("Hello World");
+    public void hello_world_test() {
+        String actual = "Hello World";
+        assertThat(actual).isEqualTo("Hello World");
     }
 
     @Test
@@ -16,7 +18,8 @@ public class HelloWorldTest {
         Dependency dependency = mock(Dependency.class);
         when(dependency.say()).thenReturn("Hello World");
         HelloWorld helloWorld = new HelloWorld(dependency);
-
         assertThat(helloWorld.beenCalled()).isEqualTo("Hello World");
     }
+
+
 }
